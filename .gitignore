@@ -1,5 +1,3 @@
-src/main/resources/application-example.yml
-
 .mvn/wrapper/maven-wrapper.jar
 src/main/resources/application.yml
 

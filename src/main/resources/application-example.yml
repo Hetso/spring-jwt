@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+# VARIABLES
+database:
+  url: jdbc:mysql://localhost:3306/spring_jwt?createDatabaseIfNotExist=true
+  user: user
+  password: password
+
+spring:
+#DATABASE CONFIG
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: ${database.url}
+    username: ${database.user}
+    password: ${database.password}
+  flyway:
+    locations: "classpath:db/migration/{vendor}"
+    url: ${database.url}
+    user: ${database.user}
+    password: ${database.password}
