@@ -1,5 +1,7 @@
 server:
   port: 8080
+  error:
+    include-stacktrace: never
 
 # VARIABLES
 database:
@@ -10,7 +12,7 @@ database:
 spring:
 #DATABASE CONFIG
   jpa:
-    show-sql: true
+    show-sql: false
     hibernate:
       ddl-auto: validate
   datasource:
@@ -23,3 +25,10 @@ spring:
     url: ${database.url}
     user: ${database.user}
     password: ${database.password}
+
+security:
+# JWT
+  jwt:
+    token:
+      secret: secret
+      expiration: 3600000
