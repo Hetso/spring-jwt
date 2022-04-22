@@ -32,3 +32,23 @@ security:
     token:
       secret: secret
       expiration: 3600000
+
+# DOCS
+springdoc:
+  swagger-ui:
+    enabled: true
+  api-docs:
+    enabled: true
+    path: /api-docs
+    groups:
+      enabled: true
+  group-configs:
+  - group: all
+    paths-to-match:
+    - /**
+  - group: auth
+    paths-to-match:
+    - /auth/**
+  - group: example
+    paths-to-match:
+    - /api/example/**

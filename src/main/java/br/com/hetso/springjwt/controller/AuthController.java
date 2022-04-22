@@ -20,8 +20,11 @@ import br.com.hetso.springjwt.data.dto.user.UserResponseDTO;
 import br.com.hetso.springjwt.data.model.UserModel;
 import br.com.hetso.springjwt.security.jwt.JwtTokenService;
 import br.com.hetso.springjwt.utils.MapperUtils;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 
+@Tag(name = "Authentication endpoints")
 @RestController
 @RequestMapping(value = "/auth", consumes = { "application/json" }, produces = { "application/json" })
 @RequiredArgsConstructor
@@ -31,6 +34,7 @@ public class AuthController {
     private final JwtTokenService tokenService;
 
     @PostMapping("/signin")
+    @Operation(summary = "Signin with login (username or email) and password")
     public ResponseEntity<AuthenticationResponseDTO> signin(@Validated @RequestBody AuthenticationRequestDTO authDTO) {
         UsernamePasswordAuthenticationToken userPassAuthToken = new UsernamePasswordAuthenticationToken(
                 authDTO.getLogin(), authDTO.getPassword());
