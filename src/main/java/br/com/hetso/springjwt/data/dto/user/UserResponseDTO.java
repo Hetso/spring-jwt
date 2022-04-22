@@ -1,7 +1,6 @@
 package br.com.hetso.springjwt.data.dto.user;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
